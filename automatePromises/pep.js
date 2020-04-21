@@ -10,10 +10,19 @@ driver
     return driver.findElement(swd.By.css("input[type=email]"));
   })
   .then((emailElement) => {
-    return emailElement.sendKeys("I think, I am getting it");
+    return emailElement.sendKeys("sgrarora3@gmail.com");
   })
   .then(() => {
-    console.log("email has been entered");
+    return driver.findElement(swd.By.css("input[type=password]"));
+  })
+  .then((passElement) => {
+    return passElement.sendKeys("");
+  })
+  .then(() => {
+    return driver.findElement(swd.By.css("button[type=submit]"));
+  })
+  .then((buttonElement) => {
+    return buttonElement.sendKeys("\n");
   })
   .catch((err) => {
     console.log(err);
